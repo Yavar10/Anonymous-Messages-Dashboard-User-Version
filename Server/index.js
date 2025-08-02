@@ -85,9 +85,15 @@ app.delete("/del", verifyJWT, async (req, res) => {
 });
 
 // Delete all tasks
-app.delete("/deleteAll", async (req, res) => {
-  await Todo.deleteMany();
-  res.status(200).send("Deleted All");
+app.delete("/deleteAll",verifyJWT, async (req, res) => {
+  if ((req.user._id.toString())==="688e972cbc797bc5656e4684")
+ {
+  await Todo.deleteMany()
+  res.status(200).send("Deleted All")
+}
+  else{
+    res.status(401).send("Not AUthoried");
+  }
 });
 
 app.listen(port, () => {

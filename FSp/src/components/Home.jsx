@@ -38,16 +38,22 @@ function Home() {
   }
 
   const delAll=()=>{
+    const token= localStorage.getItem("accessToken");
     console.log("DELETTIIIIIIIIIIIIINGGGGGGGGGGGGGGGGGGG ALLLLLLLLLLLLLLLLLLLLL")
     axios
-      .delete("https://nots-j68v.onrender.com/deleteAll", {
+      .delete("http://localhost:7000/deleteAll", {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     })
     .then((res) => {
       console.log("Deleted: ALL", res.data);
-      toast.success("Deletion successful!");
+      toast.success("All Deletion successful!");
       fetchTodos(); // <-- refresh the list
     })
-    .catch((err) => console.log(err));
+    .catch((err) =>{ console.log(err)
+      toast.error("Not Authoried!");
+    });
   }
 
   useEffect(() => {
@@ -80,7 +86,7 @@ function Home() {
       }
 
 
-        <button disabled onClick={()=>delAll()}>DELETE ALL</button>
+        <button onClick={()=>delAll()}>DELETE ALL</button>
 
 
     </div>
