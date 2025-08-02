@@ -44,7 +44,9 @@ console.log("🔐 Login response:", tok);
     console.log("🟢 Token from localStorage:", token);
     }
 
+    localStorage.setItem("userId",res.data.data.user.email);
     console.log("Login Success:", data);
+    console.log("Login Success:", res.data.data.user.email);
     toast.success("Logged in successfully!");
   } catch (err) {
     console.error("Login Error:", err.response?.data?.message || err.message);
