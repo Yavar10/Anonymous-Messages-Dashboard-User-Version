@@ -1,7 +1,45 @@
-.text{
-    background-color: aliceblue;
-    border: 1px solid black;
-    border-radius: 10px;
-    color: black;
-    height: 1cm;
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+textarea{
+ max-width: 400px;
+  word-wrap: break-word;  /* breaks long words */
+  overflow-wrap: break-word;
+}
+textarea.text {
+  width: 90%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-size: 16px;
+  box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.2);
+  outline: none;
+  margin-bottom: 16px;
+  transition: 0.3s ease;
+}
+
+textarea.text:focus {
+  box-shadow: 0 0 8px 1px rgba(0, 255, 255, 0.6);
+}
+
+/* .Cbtn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00ffff, #0066ff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.Cbtn:hover {
+  background: linear-gradient(135deg, #00ccff, #0044cc);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+} */
+

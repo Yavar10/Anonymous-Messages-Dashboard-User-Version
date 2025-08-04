@@ -45,10 +45,11 @@ const handleSubmit = async (e) => {
 
   return (
     <form className="login-form" onSubmit={handleSubmit}>
-      <h2>SignUp</h2>
+      <h1>SignUp</h1>
       <input
         type="email"
         name="email"
+        className="text"
         placeholder="Email"
         required
         value={formData.email}
@@ -58,6 +59,7 @@ const handleSubmit = async (e) => {
         type="password"
         name="password"
         placeholder="Password"
+        className="text"
         required
         value={formData.password}
         onChange={handleChange}

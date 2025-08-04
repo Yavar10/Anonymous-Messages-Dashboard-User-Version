@@ -6,9 +6,10 @@
     justify-content: space-between;
     align-items: center;
     flex: 1;                /* takes remaining space */
+    max-width: 400px;
   word-wrap: break-word;  /* breaks long words */
   overflow-wrap: break-word; /* modern equivalent */
-  white-space: normal;  
+  white-space: normal;
     margin: 5px;
     transition: background-color 0.25s;
 }
@@ -16,8 +17,14 @@
     background-color: aliceblue;
     color: black;
 }
-.cont{}
+
 .dot{
     padding: 2px;
     margin: 2px;
+}
+.db{
+    background-color: rgba(red, green, blue, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

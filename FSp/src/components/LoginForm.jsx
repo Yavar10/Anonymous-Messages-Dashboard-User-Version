@@ -58,11 +58,12 @@ console.log("🔐 Login response:", tok);
 
   return (
     <form className="login-form" onSubmit={handleSubmit}>
-      <h2>Login</h2>
+      <h1>Login</h1>
       <input
         type="email"
         name="email"
         placeholder="Email"
+        className="text"
         required
         value={formData.email}
         onChange={handleChange}
@@ -71,6 +72,7 @@ console.log("🔐 Login response:", tok);
         type="password"
         name="password"
         placeholder="Password"
+        className="text"
         required
         value={formData.password}
         onChange={handleChange}

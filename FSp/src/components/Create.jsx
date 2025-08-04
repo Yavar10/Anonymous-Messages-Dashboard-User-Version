@@ -36,10 +36,15 @@ function Create({onTaskAdded}) {
 };
 
   return (
-    <div>
-    <input type="text" placeholder="Enter stuff" className="text" onChange={(e)=>setTask(e.target.value)} />
-    <button onClick={handleCreate}>Submit</button>
-    <div>{task}</div>
+    <div className="container">
+      <textarea
+        type="text"
+        placeholder="Enter stuff"
+        className="text"
+        onChange={(e) => setTask(e.target.value)}
+      />
+      <button className="Cbtn" onClick={handleCreate}>Submit</button>
+     {/*  <div className="display-task">{task}</div> */}
     </div>
   )
 }

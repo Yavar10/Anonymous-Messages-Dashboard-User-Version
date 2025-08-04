@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
-import Create from "./Create";
+import React from 'react'
+import axios from 'axios';
 import "./css/Home.css"
-import axios from "axios";
+import { useEffect,useState } from 'react';
 import { toast } from 'react-toastify';
-
-function Home() {
-  const [todos, setTodos] = useState([]);
+const Wall = () => {
+    const [todos, setTodos] = useState([]);
 
   const fetchTodos = () => {
     console.log("FETTTTCHIIIIIIIIIIIIIIINGGGGGGGGGGGGGGGGGGG")
@@ -14,8 +13,10 @@ function Home() {
       .then((res) => setTodos(res.data))
       .catch((err) => console.log(err));
   };
-
-  const deltask=(dt)=>{
+  useEffect(() => {
+      fetchTodos();
+    }, []);
+const deltask=(dt)=>{
     const id=dt._id;
     const ownid=dt.owner;
     const token= localStorage.getItem("accessToken");
@@ -55,17 +56,11 @@ function Home() {
       toast.error("Not Authoried!");
     });
   }
-
-  useEffect(() => {
-    fetchTodos();
-  }, []);
-
   return (
-    
-    <div>
-      <h1>Anonymous Chirp</h1>
-
-      <Create onTaskAdded={fetchTodos} /> {/* <-- FIXED HERE */}
+    <div>{
+      localStorage.getItem("userId")==="admin@gmail.com"?( <button className='dba' onClick={()=>delAll()}>DELETE ALL</button>):(<p></p>)
+      }
+        
       {
       todos.length === 0 ? (
         <div>
@@ -78,19 +73,14 @@ function Home() {
            <div className="dot">•</div> 
           {todo.task}
           <button className="db" onClick={()=>deltask(todo)}>
-          X
+          🗑️
           </button></div>
      
         ))
       )
       }
-
-
-        <button onClick={()=>delAll()}>DELETE ALL</button>
-
-
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Wall
