@@ -72,7 +72,7 @@ app.delete("/del", verifyJWT, async (req, res) => {
     }
 
     // Check if the task belongs to the logged-in user
-    if (req.user._id.toString()!=="688e972cbc797bc5656e4684"&&task.owner.toString() !== req.user._id.toString()) {
+    if (req.user._id.toString()!==process.env.ADMIN_ID&&task.owner.toString() !== req.user._id.toString()) {
       return res.status(403).json({ error: "Unauthorized" });
     }
 
@@ -86,7 +86,7 @@ app.delete("/del", verifyJWT, async (req, res) => {
 
 // Delete all tasks
 app.delete("/deleteAll",verifyJWT, async (req, res) => {
-  if ((req.user._id.toString())==="688e972cbc797bc5656e4684")
+  if ((req.user._id.toString())===process.env.ADMIN_ID)
  {
   await Todo.deleteMany()
   res.status(200).send("Deleted All")
