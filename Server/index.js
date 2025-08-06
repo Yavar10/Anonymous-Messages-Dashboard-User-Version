@@ -18,7 +18,7 @@ const port = process.env.PORT || 7000;
 
 // Middlewares
 app.use(cors({
-  origin: CORS_ORIGIN,  // Update to match your frontend
+  origin: "*",  // Update to match your frontend
   credentials: true                // Allow cookies to be sent
 }));
 app.use(express.json());
