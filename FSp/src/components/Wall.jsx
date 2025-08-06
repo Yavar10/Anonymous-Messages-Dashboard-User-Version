@@ -9,7 +9,7 @@ const Wall = () => {
   const fetchTodos = () => {
     console.log("FETTTTCHIIIIIIIIIIIIIIINGGGGGGGGGGGGGGGGGGG")
     axios
-      .get("http://localhost:7000/get")
+      .get("https://anonymous-messages-dashboard-user-version.onrender.com/get")
       .then((res) => setTodos(res.data))
       .catch((err) => console.log(err));
   };
@@ -22,7 +22,7 @@ const deltask=(dt)=>{
     const token= localStorage.getItem("accessToken");
     console.log(`XXXXXXX ${id} ${ownid}` )
     axios
-      .delete("http://localhost:7000/del", {
+      .delete("https://anonymous-messages-dashboard-user-version.onrender.com/del", {
       data: {_id: id },
       headers: {
         Authorization: `Bearer ${token}`
@@ -42,7 +42,7 @@ const deltask=(dt)=>{
     const token= localStorage.getItem("accessToken");
     console.log("DELETTIIIIIIIIIIIIINGGGGGGGGGGGGGGGGGGG ALLLLLLLLLLLLLLLLLLLLL")
     axios
-      .delete("http://localhost:7000/deleteAll", {
+      .delete("https://anonymous-messages-dashboard-user-version.onrender.com/deleteAll", {
       headers: {
         Authorization: `Bearer ${token}`
       }

@@ -8,7 +8,7 @@ const logOutHandler = async () => {
    const id=localStorage.getItem("Uid")
   try {
     const res = await axios.post(
-      "http://localhost:7000/logOut",{id}
+      "https://anonymous-messages-dashboard-user-version.onrender.com/logOut",{id}
    
     );
     console.log(localStorage.getItem("Uid"))
