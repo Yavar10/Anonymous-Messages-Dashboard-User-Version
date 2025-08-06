@@ -10,7 +10,7 @@ function Create({onTaskAdded}) {
     const[task,setTask]=useState()
 
    const handleCreate = () => {
-  if (!task.trim()) return;
+  if (!task.trim()) {return};
 
   const token = localStorage.getItem("accessToken");
   console.log("🟢 Token from create localStorage:", token);

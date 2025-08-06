@@ -12,7 +12,7 @@ import Home2 from './components/Home2.jsx'
 
 function App() {
 const [page, whatpage] = useState(0)
-const username=localStorage.getItem("userId");
+//const username=localStorage.getItem("userId");
 if(page===0){
   return (
      <div className='fullcontainer'>
