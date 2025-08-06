@@ -18,7 +18,7 @@ const port = process.env.PORT || 7000;
 
 // Middlewares
 app.use(cors({
-  origin: "*",  // Update to match your frontend
+  origin: "https://anonymous-messages-dashboard-user-version.onrender.com",  // Update to match your frontend
   credentials: true                // Allow cookies to be sent
 }));
 app.use(express.json());
